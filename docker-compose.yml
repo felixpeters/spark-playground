@@ -8,7 +8,7 @@ services:
       - "8080:8080"
       - "7077:7077"
     networks:
-      - spark-network
+      - spark_network
     environment:
       - "SPARK_LOCAL_IP=spark-master"
       - "SPARK_MASTER_PORT=7077"
@@ -21,13 +21,13 @@ services:
     ports:
       - 8080
     networks:
-      - spark-network
+      - spark_network
     environment:
       - "SPARK_MASTER=spark://spark-master:7077"
       - "SPARK_WORKER_WEBUI_PORT=8080"
     command: "/start-worker.sh"
 networks:
-  spark-network:
+  spark_network:
     driver: bridge
     ipam:
       driver: default

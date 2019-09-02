@@ -1,0 +1,15 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /project/target/scala-2.11/myfirstscalaspark_2.11-0.1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/example/MyFirstScalaSpark$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/target/scala-2.11/classes/com/example/MyFirstScalaSpark$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/example/MyFirstScalaSpark.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/target/scala-2.11/classes/com/example/MyFirstScalaSpark.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/example/MyFirstScalaSpark$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/target/scala-2.11/classes/com/example/MyFirstScalaSpark$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/example[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/target/scala-2.11/classes/com/example[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/example/MyFirstScalaSpark$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/target/scala-2.11/classes/com/example/MyFirstScalaSpark$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/target/scala-2.11/classes/com[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
