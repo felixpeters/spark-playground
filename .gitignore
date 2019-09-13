@@ -1,3 +1,5 @@
 *.class
 *.log
 src/main/scala/target/
+project/
+target/
