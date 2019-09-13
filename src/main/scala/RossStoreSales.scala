@@ -1,14 +1,15 @@
 package com.example
 import org.apache.spark.sql.SparkSession
 
-object RossStoreSales {
+object SalesDataPreprocessing {
   def main(args: Array[String]) {
     val spark = SparkSession.builder
-      .appName("RossStoreSales")
+      .appName("SalesDataPreprocessing")
       .getOrCreate()
 
     val salesPath = args(0)
     val storePath = args(1)
+    val savePath = args(2)
     val sales = spark.read
       .option("header", "true")
       .option("inferSchema", "true")
@@ -18,8 +19,11 @@ object RossStoreSales {
       .option("inferSchema", "true")
       .csv(storePath)
 
-    sales.printSchema
-    stores.printSchema
+    val data = sales.join(stores, "Store")
+
+    data.printSchema
+
+    data.write.format("csv").mode("overwrite").save(savePath)
 
     spark.stop()
   }

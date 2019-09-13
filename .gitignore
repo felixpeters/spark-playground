@@ -1,2 +1,3 @@
 *.class
 *.log
+src/main/scala/target/
