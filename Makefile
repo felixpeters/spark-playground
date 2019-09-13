@@ -14,7 +14,7 @@ run-cluster:
 	docker-compose up --scale spark-worker=$(NUM_WORKERS)
 
 run-submitter:
-	docker run --rm -it -e SPARK_MASTER="spark://spark-master:7077" -v `pwd`:/project --network spark-docker_spark_network felixpeters/spark:latest /bin/bash
+	docker run --rm -it -e SPARK_MASTER="spark://spark-master:7077" -v `pwd`:/project -v `pwd`:/local --network spark-docker_spark_network felixpeters/spark:latest /bin/bash
 
 run-builder:
-	docker run -it --rm -v `pwd`:/project spikerlabs/scala-sbt /bin/bas
+	docker run -it --rm -v `pwd`:/project spikerlabs/scala-sbt /bin/bash
