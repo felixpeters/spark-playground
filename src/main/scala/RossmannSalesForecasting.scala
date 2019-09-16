@@ -2,6 +2,8 @@ package me.felixpeters.spark
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.ml.{Pipeline, PipelineModel}
 import org.apache.spark.ml.feature.{MinMaxScaler, OneHotEncoderEstimator, StringIndexer, VectorAssembler}
+import org.apache.spark.ml.evaluation.RegressionEvaluator
+import org.apache.spark.ml.regression.{GBTRegressionModel, GBTRegressor}
 
 object RossmannSalesForecasting {
   def main(args: Array[String]) {
@@ -80,9 +82,31 @@ object RossmannSalesForecasting {
     val features = assembler.transform(transformations)
     val scaled_features = scaler.fit(features).transform(features)
       
-    val result = scaled_features.select("features", "scaled_features", "Sales")
+    val dataset = scaled_features.select("features", "scaled_features", "Sales")
 
-    result.printSchema
+    dataset.printSchema
+
+    // train gradient-boosted tree model
+    val Array(trainingData, validationData) = dataset.randomSplit(Array(0.8, 0.2))
+
+    val gbt = new GBTRegressor()
+      .setLabelCol("Sales")
+      .setFeaturesCol("scaled_features")
+      .setMaxIter(10)
+
+    val model = gbt.fit(trainingData)
+    
+    // evaluate model on validation data
+    val predictions = model.transform(validationData)
+
+    predictions.select("prediction", "Sales").show(5)
+
+    val evaluator = new RegressionEvaluator()
+      .setLabelCol("Sales")
+      .setPredictionCol("prediction")
+      .setMetricName("rmse")
+    val rmse = evaluator.evaluate(predictions)
+    println("Root Mean Squared Error (RMSE) on test data = " + rmse)
 
     spark.stop()
   }
