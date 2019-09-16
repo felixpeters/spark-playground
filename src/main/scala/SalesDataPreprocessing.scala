@@ -23,7 +23,11 @@ object SalesDataPreprocessing {
 
     data.printSchema
 
-    data.write.format("csv").mode("overwrite").save(savePath)
+    data.coalesce(1).write
+      .format("csv")
+      .mode("overwrite")
+      .option("header", "true")
+      .save(savePath)
 
     spark.stop()
   }

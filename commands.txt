@@ -1,2 +1,5 @@
 # submit data preprocessing job
 /spark/bin/spark-submit --master $SPARK_MASTER --class com.example.SalesDataPreprocessing target/scala-2.11/rossmannsalesforecasting_2.11-0.1.0.jar /local/src/data/train.csv /local/src/data/store.csv /local/src/data/sales_preprocessed.csv
+
+# submit feature engineering job
+/spark/bin/spark-submit --master $SPARK_MASTER --class com.example.FeatureEngineering target/scala-2.11/rossmannsalesforecasting_2.11-0.1.0.jar /local/src/data/sales_preprocessed.csv

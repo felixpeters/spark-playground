@@ -3,4 +3,5 @@
 src/main/scala/target/
 project/
 target/
+src/data/
 *.swp
