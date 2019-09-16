@@ -1,2 +1,5 @@
+# run MyFirstScalaSpark application
+/spark/bin/spark-submit --master $SPARK_MASTER --class me.felixpeters.spark.MyFirstScalaSpark /local/src/main/scala/target/scala-2.11/rossmannsalesforecasting_2.11-0.1.0.jar
+
 # run Rossmann sales forecasting model
 /spark/bin/spark-submit --master $SPARK_MASTER --class me.felixpeters.spark.RossmannSalesForecasting /local/src/main/scala/target/scala-2.11/rossmannsalesforecasting_2.11-0.1.0.jar /local/src/data/train.csv /local/src/data/store.csv
