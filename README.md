@@ -30,10 +30,9 @@ on the derived features.
 
 Running the included examples requires two steps:
 1. Building the executable JAR file from Scala code inside a dedicated container.
-  1. Start the builder container using `make run-builder`.
-  2. Inside the container, navigate to `/local/src/main/scala` and start the Scala build tool using the `sbt` command. 
-  3. In the _sbt_ console, run `package` to build the executable.
+   - Start the builder container using `make run-builder`.
+   - Inside the container, navigate to `/local/src/main/scala` and start the Scala build tool using the `sbt` command. 
+   - In the _sbt_ console, run `package` to build the executable.
 2. Submitting the created executable to the Spark cluster.
-  1. Start the submitter using `make run-submitter`.
-  2. Inside the container, run one of the commands from `commands.txt` to start
-  the respective application.
+   - Start the submitter using `make run-submitter`.
+   - Inside the container, run one of the commands from `commands.txt` to start the respective application.
