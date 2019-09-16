@@ -10,8 +10,8 @@ from the _Towards Data Science_ blog on Medium.
 Running the cluster only requires a working Docker installation (see [official website](https://docs.docker.com/install/) for installation instructions).
 
 After installing Docker, you should build the required images using the following commands:
-- Master and worker image: `make build-image`
-- Submitter image: `make build-sbt-image`
+- Master, worker and submitter image: `make build-image`
+- Builder image: `make build-sbt-image`
 
 ## Run cluster
 
