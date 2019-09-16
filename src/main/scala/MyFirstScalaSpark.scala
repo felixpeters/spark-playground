@@ -1,4 +1,4 @@
-package com.example
+package me.felixpeters.spark
 import org.apache.spark.sql.SparkSession
 
 object MyFirstScalaSpark {
