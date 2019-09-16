@@ -4,4 +4,5 @@ src/main/scala/target/
 project/
 target/
 src/data/sales_preprocessed.csv/
+src/data/data_preprocessed.csv/
 *.swp
